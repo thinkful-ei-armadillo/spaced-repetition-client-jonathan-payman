@@ -1,0 +1,12 @@
+section {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item {
+  margin: 20px 0;
+}
