@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
 import userContext from '../../contexts/UserContext';
+import dashboardApiService from '../../services/dashboard-api-service'
 
 class Dashboard extends Component { 
+  state = {
+    error: null,
+    language: null
+  }
+
   static contextType = userContext;
+
+  componentDidMount() {
+    dashboardApiService.getLanguage()
+      .then(lang => {
+        console.log(lang)
+        this.setState({ language: lang });
+      })
+    .catch(res => this.setState({error: res.error}))
+    
+  }
 
   render() {
     const { user } = this.context;
-    console.log(this.context);
 
     return (
       <div>

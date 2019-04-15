@@ -3,13 +3,18 @@ import TokenService from './token-service';
 
 const dashboardApiService = {
 
-  getLanguage(user) {
-    fetch(`${config.API_ENDPOINT}/language`, {
+  getLanguage() {
+    return fetch(`${config.API_ENDPOINT}/language`, {
       method: "GET",
       header: {
         authorization: `Bearer ${TokenService.getAuthToken()}`
       }
-    });
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
   }
 
 };
