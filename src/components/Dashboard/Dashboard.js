@@ -22,6 +22,7 @@ class Dashboard extends Component {
   }
 
   render() {
+    const { words } = this.context;
     return (
       <UserContext.Consumer>
         {value => {
@@ -31,10 +32,14 @@ class Dashboard extends Component {
               <h3>{this.context.language.name}</h3>
               <h4>Words</h4>
               <ul>
-                <WordList />
+                {
+                  words.map((word, i) => <WordList key={i} word={word} />)
+                }
               </ul>
               <ul>
-                <WordListResults />
+                {
+                  words.map((word, i) => <WordListResults key={i} word={word} />)
+                }
               </ul>
             </div>
           );

@@ -1,19 +1,22 @@
 import React from 'react';
 
 export function WordList(props) {
-  const { words } = props;
+  const { word } = props;
+
+  console.log(word)
   return (
-    <>
-      <li>{words}</li>
-    </>
-  );
+    <li>
+      {word.original}
+    </li>
+  )
 }
 
 export function WordListResults(props) {
-  const { correct_count, incorrect_count } = props;
+  const { correct_count, incorrect_count } = props.word;
+  const total = correct_count + incorrect_count;
   return (
-    <>
-      <li />
-    </>
+    <li>
+      {correct_count} / {total}
+    </li>
   );
 }
