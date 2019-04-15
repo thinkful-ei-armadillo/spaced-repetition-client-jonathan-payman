@@ -1,11 +1,11 @@
 button {
   border: none;
   padding: 4px 8px;
-  background-color: rgba(0,0,0,.3);
+  background-color:  #EFEFEF;
   border-radius: 5px;
 }
 
 button:hover {
-  background-color: lightblue;
+  background-color: #99d3df;
   cursor: pointer;
 }
