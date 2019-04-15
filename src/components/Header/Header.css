@@ -1,0 +1,19 @@
+header {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration-line: underline;
+}
+
+.navbar {
+  text-align: end;
+  background-color: rgba(0,0,0,.25);
+  padding: 15px;
+}
+
