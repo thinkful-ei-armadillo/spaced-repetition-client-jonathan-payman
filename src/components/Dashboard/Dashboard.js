@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import userContext from '../../contexts/UserContext';
+import UserContext from '../../contexts/UserContext';
+//import LanguageContext from '../../contexts/LanguageContext';
 import dashboardApiService from '../../services/dashboard-api-service';
 
 class Dashboard extends Component {
@@ -8,26 +9,29 @@ class Dashboard extends Component {
     language: null
   };
 
-  static contextType = userContext;
+  //static contextType = userContext;
 
   componentDidMount() {
     dashboardApiService
       .getLanguage()
-      .then(lang => {
-        debugger;
-        console.log(lang);
-        this.setState({ language: lang });
+      .then(data => {
+        console.log(data);
+        this.setState({ language: data.language, word: data.words });
       })
       .catch(res => this.setState({ error: res.error }));
   }
 
   render() {
-    const { user } = this.context;
-
     return (
-      <div>
-        <h2>{user.name}'s Dashboard</h2>
-      </div>
+      <UserContext.Consumer>
+        {value => {
+          return (
+            <div>
+              <h2>{value.user.name}'s Dashboard</h2>
+            </div>
+          );
+        }}
+      </UserContext.Consumer>
     );
   }
 }
