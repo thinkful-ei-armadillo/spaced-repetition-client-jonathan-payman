@@ -3,17 +3,6 @@ section {
   height: 90vh;
 }
 
-form {
-  display: inline-flex;
-  flex-direction: column;
-  text-align: right;
-  padding: 40px;
-  padding-bottom: 60px;
-  background-color: #309dcf;
-  color: #EFEFEF;
-  border-radius: 8px;
-}
-
 .form-item {
   margin: 20px 0;
 }
@@ -36,5 +25,5 @@ form {
 }
 
 .footer-link:hover {
-  color: rgba(255, 255, 255, 0.75)
+  color: rgba(255, 255, 255, 0.75);
 }

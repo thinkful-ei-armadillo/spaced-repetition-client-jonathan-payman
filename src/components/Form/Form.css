@@ -4,6 +4,7 @@ form {
   text-align: right;
   padding: 20px 40px;
   padding-bottom: 60px;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: #309dcf;
+  color: #efefef;
   border-radius: 8px;
 }
