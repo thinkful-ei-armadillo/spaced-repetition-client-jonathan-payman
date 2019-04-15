@@ -4,14 +4,14 @@ header {
 
 .navbar a {
   text-decoration: none;
-  color: #6c6c6c;
+  color: white;
   padding: 5px;
   line-height: 30px;
 }
 
 .navbar a:hover {
   text-decoration-line: none;
-  color: #373737;
+  color: #beeaff;
 }
 
 nav {
@@ -27,7 +27,7 @@ nav {
 
 .navbar {
   text-align: end;
-  background-color: #efefef;
+  background-color: #309dcf;
   padding: 15px;
   height: 60px;
   border: 1px solid #a9a9a9;
