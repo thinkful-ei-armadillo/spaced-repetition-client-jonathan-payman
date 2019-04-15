@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import UserContext from '../../contexts/UserContext';
 import LanguageContext from '../../contexts/LanguageContext';
 import dashboardApiService from '../../services/dashboard-api-service';
+import { WordListResults, WordList } from '../WordList/WordList';
 
 class Dashboard extends Component {
   state = {
@@ -22,18 +23,23 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <UserContext.Consumer>
-          {value => {
-            return (
-              <div>
-                <h2>{value.user.name}'s Dashboard</h2>
-              </div>
-            );
-          }}
-        </UserContext.Consumer>
-        {this.context.language.name}
-      </React.Fragment>
+      <UserContext.Consumer>
+        {value => {
+          return (
+            <div>
+              <h2>{value.user.name}'s Dashboard</h2>
+              <h3>{this.context.language.name}</h3>
+              <h4>Words</h4>
+              <ul>
+                <WordList />
+              </ul>
+              <ul>
+                <WordListResults />
+              </ul>
+            </div>
+          );
+        }}
+      </UserContext.Consumer>
     );
   }
 }
