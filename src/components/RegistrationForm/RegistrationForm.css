@@ -23,12 +23,18 @@ form {
 }
 
 .form-footer {
-  display: flex;
-  justify-content: space-around;
   margin-top: 40px;
+  display: flow-root;
+  text-align: -webkit-center;
 }
 
 .footer-link {
   text-decoration-line: none;
   color: white;
+  display: inherit;
+  margin-top: 15px;
+}
+
+.footer-link:hover {
+  color: rgba(255, 255, 255, 0.75)
 }
