@@ -1,3 +1,23 @@
 h2 {
   color: #6c6c6c;
 }
+
+.form-item {
+  margin: 10px 0;
+}
+.form-item label {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+.form-item input {
+  display: block;
+  width: 100%;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.06), 0 5px 4px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid white;
+  width: 238px;
+  height: 40px;
+  padding-left: 10px;
+}
