@@ -1,25 +1,26 @@
-import React, { Component } from 'react'
-import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
+import React, { Component } from 'react';
+import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
 
 class RegistrationRoute extends Component {
   static defaultProps = {
     history: {
-      push: () => {},
-    },
-  }
+      push: () => {}
+    }
+  };
 
   handleRegistrationSuccess = () => {
-    const { history } = this.props
-    history.push('/login')
-  }
+    const { history } = this.props;
+    history.push('/login');
+  };
 
   render() {
     return (
-      <section>
+      <section className="registration-section">
         <p>
-          Practice learning a language with the spaced reptition revision technique.
+          Practice learning a language with the spaced reptition revision
+          technique.
         </p>
-        <h2>Sign up</h2>
+        <h2 className="register-header">Sign up</h2>
         <RegistrationForm
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />
@@ -28,4 +29,4 @@ class RegistrationRoute extends Component {
   }
 }
 
-export default RegistrationRoute
+export default RegistrationRoute;
