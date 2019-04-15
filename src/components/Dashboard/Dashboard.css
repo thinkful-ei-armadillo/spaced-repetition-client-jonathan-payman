@@ -1,13 +1,27 @@
 ul {
   list-style: none;
+  line-height: 26px;
+}
+
+.list-container {
+  background-color: #98D2EB;
+  border-radius: 7px;
+  display: inline-block;
 }
 
 .word-list {
   display: inline-flex;
   flex-direction: column;
+  padding: 20px;
+  border-right: 1px solid;
 }
 
 .word-results {
   display: inline-flex;
   flex-direction: column;
+  padding: 20px;
+}
+
+.dashboard-btn {
+  background-color: #309dcf;
 }
