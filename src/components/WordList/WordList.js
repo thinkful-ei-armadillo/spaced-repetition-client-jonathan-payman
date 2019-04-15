@@ -2,8 +2,6 @@ import React from 'react';
 
 export function WordList(props) {
   const { word } = props;
-
-  console.log(word)
   return (
     <li>
       {word.original}

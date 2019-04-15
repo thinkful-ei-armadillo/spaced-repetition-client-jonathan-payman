@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+}
+
+.word-list {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.word-results {
+  display: inline-flex;
+  flex-direction: column;
+}
