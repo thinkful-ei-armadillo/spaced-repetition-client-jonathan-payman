@@ -14,6 +14,15 @@ header {
   color: #beeaff;
 }
 
+.header-user {
+  color: #beeaff;
+  padding: 5px;
+  line-height: 30px;
+  border-right: 1px solid #beeaff;
+  padding-right: 20px;
+  margin-right: 10px;
+}
+
 nav {
   display: inline-block;
 }
