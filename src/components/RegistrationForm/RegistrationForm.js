@@ -78,7 +78,7 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <footer>
+        <footer className='form-footer'>
           <Button type='submit'>
             Sign up
           </Button>
