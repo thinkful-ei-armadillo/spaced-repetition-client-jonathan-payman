@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 const LanguageContext = React.createContext({
   language: {},
   words: [],
-  nextWord: null,
+  head: null,
   processLanguage: () => {},
+  processNextWord: () => {},
   setError: () => {},
   clearError: () => {}
 });
@@ -36,7 +37,7 @@ export class LanguageProvider extends Component {
   };
 
   processNextWord = head => {
-    this.setState({ head });
+    this.setState({ head: head });
   };
 
   render() {

@@ -31,6 +31,7 @@ ul {
   display: inline-flex;
   flex-direction: column;
   font-size: 14px;
+  align-items: flex-end;
 }
 
 .word-list-item span div {
