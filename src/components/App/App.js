@@ -30,7 +30,7 @@ export default class App extends Component {
           <Switch>
             <PrivateRoute
               exact
-              path={'/'}
+              path={ '/' }
               component={DashboardRoute}
             />
             <PrivateRoute
