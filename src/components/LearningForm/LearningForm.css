@@ -1,15 +1,36 @@
 .word-form-info {
-  color: white;
-  text-align: left;
+  color: #6c6c6c;
+  text-align: center;
   line-height: 26px;
 }
 
-.Button {
-  margin-top: 30px;
+.learning-section .Button {
+  margin-top: 15px;
   text-align: center;
   display: block;
 }
 
-.Input {
+.learning-section header span {
+  color: #878787;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.learning-section header h2 {
+  margin: 0;
+}
+
+.learning-section header {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.learning-section form p {
+  text-align: center;
+  color: #99d3df;
+  font-weight: bold;
+}
+
+.learning-section .Input {
   margin: 20px 50px;
 }

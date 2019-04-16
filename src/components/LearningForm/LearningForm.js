@@ -30,30 +30,37 @@ export default function LearningForm(props) {
   return (
     <React.Fragment>
       {head !== null && (
-        <>
-          {console.log(head)}
-          <h2>Translate the word: {head.nextWord}</h2>
+        <React.Fragment>
+          <header>
+            <h2>Translate the word:</h2>
+
+            <span>{head.nextWord}</span>
+          </header>
           <form onSubmit={e => guessWord(e)}>
-            <p className="word-form-info">
-              What's the Translation for this word?
-            </p>
-            <p className="word-form-info">
-              Correctly translated this word {head.wordCorrectCount} times
-            </p>
-            <p className="word-form-info">
-              Incorrect translation for this word {head.wordIncorrectCount}{' '}
-              times
-            </p>
-            <p className="word-form-info">Score: {head.totalScore}</p>
-            <Input
-              ref={questionInput}
-              id="learning-question-input"
-              name="question"
-              required
-            />
-            <Button type="submit">Submit</Button>
+            {/* <input type='text' required /> */}
+            <p>{`Your total score is: ${head.totalScore}`}</p>
+            <div className="form-item">
+              <label htmlFor="learn-guess-input">
+                What's the translation for this word?
+              </label>
+              <Input
+                ref={questionInput}
+                id="learn-guess-input"
+                name="question"
+                required
+              />
+            </div>
+            <Button type="submit">Submit your answer</Button>
           </form>
-        </>
+
+          <p className="word-form-info">
+            You have answered this word correctly {head.wordCorrectCount} times.
+          </p>
+          <p className="word-form-info">
+            You have answered this word incorrectly {head.wordIncorrectCount}{' '}
+            times.
+          </p>
+        </React.Fragment>
       )}
       {head === null && 'Loading'}
     </React.Fragment>
