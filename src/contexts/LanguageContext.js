@@ -14,7 +14,7 @@ export default LanguageContext;
 export class LanguageProvider extends Component {
   constructor(props) {
     super(props);
-    const state = { language: {}, words: [] };
+    const state = { language: {}, words: [], head: null };
     this.state = state;
   }
 
@@ -35,15 +35,15 @@ export class LanguageProvider extends Component {
     this.setState({ language: language.language, words: language.words });
   };
 
-  processNextWord = nextWord => {
-    this.setState({ nextWord });
+  processNextWord = head => {
+    this.setState({ head });
   };
 
   render() {
     const value = {
       language: this.state.language,
       words: this.state.words,
-      nextWord: this.state.nextWord,
+      head: this.state.head,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
