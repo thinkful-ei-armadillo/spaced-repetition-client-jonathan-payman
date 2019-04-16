@@ -3,10 +3,10 @@ import { Input, Required, Label } from '../Form/Form';
 import Button from '../Button/Button';
 import learningApiService from '../../services/learning-api-service';
 import LanguageContext from '../../contexts/LanguageContext';
+import './LearningForm.css';
 
 export default function LearningForm(props) {
   const languageContext = useContext(LanguageContext);
-  //const [wordInput, updateWord] = useState(null);
   const [head, setHead] = useState(null);
   const questionInput = useRef(null);
 
@@ -30,25 +30,30 @@ export default function LearningForm(props) {
   return (
     <React.Fragment>
       {head !== null && (
-        <React.Fragment>
-          <h2>Translate the word:</h2>
-          <span>{head.nextWord}</span>
+        <>
+          {console.log(head)}
+          <h2>Translate the word: {head.nextWord}</h2>
           <form onSubmit={e => guessWord(e)}>
-            {/* <input type='text' required /> */}
-            <p>{`Your total score is: ${head.totalScore}`}</p>
-
-            <label htmlFor="learn-guess-input">
-              What's the translation for this word?
-            </label>
+            <p className="word-form-info">
+              What's the Translation for this word?
+            </p>
+            <p className="word-form-info">
+              Correctly translated this word {head.wordCorrectCount} times
+            </p>
+            <p className="word-form-info">
+              Incorrect translation for this word {head.wordIncorrectCount}{' '}
+              times
+            </p>
+            <p className="word-form-info">Score: {head.totalScore}</p>
             <Input
               ref={questionInput}
-              id="learn-guess-input"
+              id="learning-question-input"
               name="question"
               required
             />
-            <Button type="submit">Submit your answer</Button>
+            <Button type="submit">Submit</Button>
           </form>
-        </React.Fragment>
+        </>
       )}
       {head === null && 'Loading'}
     </React.Fragment>
