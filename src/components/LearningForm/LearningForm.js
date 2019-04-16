@@ -20,25 +20,37 @@ export default function LearningForm(props) {
   const guessWord = e => {
     e.preventDefault();
     console.log(questionInput.current.value);
+    learningApiService.makeGuess(questionInput.current.value).then(response => {
+      response.processNextWord(response.nextWord);
+      setHead(response.nextWord);
+    });
     //questionInput.current;
   };
 
   return (
     <React.Fragment>
       {head !== null && (
-        <form onSubmit={e => guessWord(e)}>
-          {/* <input type='text' required /> */}
+        <React.Fragment>
           <h2>Translate the word:</h2>
           <span>{head.nextWord}</span>
-          <Input
-            ref={questionInput}
-            id="learning-question-input"
-            name="question"
-            required
-          />
-          <Button type="submit">Submit</Button>
-        </form>
+          <form onSubmit={e => guessWord(e)}>
+            {/* <input type='text' required /> */}
+            <p>{`Your total score is: ${head.totalScore}`}</p>
+
+            <label htmlFor="learn-guess-input">
+              What's the translation for this word?
+            </label>
+            <Input
+              ref={questionInput}
+              id="learn-guess-input"
+              name="question"
+              required
+            />
+            <Button type="submit">Submit your answer</Button>
+          </form>
+        </React.Fragment>
       )}
+      {head === null && 'Loading'}
     </React.Fragment>
   );
 }
