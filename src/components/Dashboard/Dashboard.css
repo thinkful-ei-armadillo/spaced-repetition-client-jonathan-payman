@@ -4,13 +4,14 @@ ul {
 }
 
 .list-container {
-  background-color: #98d2eb;
+  background-color: #309dcf;
   border-radius: 15px;
   display: inline-block;
   width: 90%;
   max-width: 600px;
   margin-bottom: 15px;
   padding-top: 15px;
+  color: #e7e7e7;
 }
 
 .list-container h3 {
@@ -70,7 +71,6 @@ ul {
 }
 
 .dashboard-btn {
-  background-color: #309dcf;
   text-decoration: none;
   width: 50%;
   margin-bottom: 10px;
