@@ -8,10 +8,12 @@ import './LearningForm.css';
 export default function LearningForm(props) {
   const languageContext = useContext(LanguageContext);
   const [head, setHead] = useState(null);
+  const [correct, setCorrect] = useState(null);
   const questionInput = useRef(null);
 
   useEffect(() => {
     learningApiService.getLanguageHead().then(word => {
+      console.log(word)
       setHead(word);
       languageContext.processNextWord(word);
     });
@@ -21,8 +23,10 @@ export default function LearningForm(props) {
     e.preventDefault();
     console.log(questionInput.current.value);
     learningApiService.makeGuess(questionInput.current.value).then(response => {
-      response.processNextWord(response.nextWord);
+      console.log(response)
+      languageContext.processNextWord(response.nextWord);
       setHead(response.nextWord);
+      console.log(response.correct)
     });
     //questionInput.current;
   };
@@ -37,9 +41,9 @@ export default function LearningForm(props) {
             <span>{head.nextWord}</span>
           </header>
           <form onSubmit={e => guessWord(e)}>
-            {/* <input type='text' required /> */}
-            <p>{`Your total score is: ${head.totalScore}`}</p>
-            <div className="form-item">
+              
+              <p>{`Your total score is: ${head.totalScore}`}</p>
+              <div className="form-item">
               <label htmlFor="learn-guess-input">
                 What's the translation for this word?
               </label>
@@ -48,9 +52,10 @@ export default function LearningForm(props) {
                 id="learn-guess-input"
                 name="question"
                 required
-              />
+                />
             </div>
             <Button type="submit">Submit your answer</Button>
+              
           </form>
 
           <p className="word-form-info">
