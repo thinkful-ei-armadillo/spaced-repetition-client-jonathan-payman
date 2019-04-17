@@ -26,3 +26,15 @@ section {
 .footer-link:hover {
   color: rgba(255, 255, 255, 0.75);
 }
+
+@media screen and (max-width: 700px) {
+
+  .registration-section {
+    margin-top: 70px;
+  }
+
+  .registration-section form {
+    margin-bottom: 20px;
+  }
+
+}

@@ -33,15 +33,13 @@ export default function LearningForm(props) {
         wordCorrectCount: response.wordCorrectCount,
         wordIncorrectCount: response.wordIncorrectCount
       };
-      debugger;
       setResult({ question: head.nextWord, answer: response.answer });
       setInput(questionInput.current.value);
       setCorrect(response.isCorrect);
       setHead(newHead);
-      //r//esponse.processNextWord(response.nextWord);
       setView('answer');
     });
-    //questionInput.current;
+ 
   }
 
   const showResults = () => {
