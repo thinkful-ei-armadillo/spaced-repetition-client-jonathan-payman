@@ -8,6 +8,8 @@ import './LearningForm.css';
 export default function LearningForm(props) {
   const languageContext = useContext(LanguageContext);
   const [head, setHead] = useState(null);
+  const [correct, setCorrect] = useState(null);
+  const [view, setView] = useState('question');
   const questionInput = useRef(null);
 
   useEffect(() => {
@@ -21,8 +23,16 @@ export default function LearningForm(props) {
     e.preventDefault();
     console.log(questionInput.current.value);
     learningApiService.makeGuess(questionInput.current.value).then(response => {
-      response.processNextWord(response.nextWord);
-      setHead(response.nextWord);
+      debugger;
+      const newHead = {
+        nextWord: response.nextWord,
+        totalScore: response.totalScore,
+        wordCorrectCount: response.wordCorrectCount,
+        wordIncorrectCount: response.wordIncorrectCount
+      };
+      setCorrect(true);
+      //r//esponse.processNextWord(response.nextWord);
+      setHead(newHead);
     });
     //questionInput.current;
   };

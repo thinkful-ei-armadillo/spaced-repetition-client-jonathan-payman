@@ -13,7 +13,3 @@ export function WordList(props) {
     </li>
   );
 }
-
-export function WordListResults(props) {
-  return <li />;
-}
