@@ -14,6 +14,7 @@ export default function LearningForm(props) {
 
   useEffect(() => {
     learningApiService.getLanguageHead().then(word => {
+      console.log(word);
       setHead(word);
       languageContext.processNextWord(word);
     });
@@ -23,7 +24,6 @@ export default function LearningForm(props) {
     e.preventDefault();
     console.log(questionInput.current.value);
     learningApiService.makeGuess(questionInput.current.value).then(response => {
-      debugger;
       const newHead = {
         nextWord: response.nextWord,
         totalScore: response.totalScore,
@@ -47,7 +47,6 @@ export default function LearningForm(props) {
             <span>{head.nextWord}</span>
           </header>
           <form onSubmit={e => guessWord(e)}>
-            {/* <input type='text' required /> */}
             <p>{`Your total score is: ${head.totalScore}`}</p>
             <div className="form-item">
               <label htmlFor="learn-guess-input">
