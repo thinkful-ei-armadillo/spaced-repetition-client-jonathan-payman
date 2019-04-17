@@ -10,6 +10,8 @@ export default function LearningForm(props) {
   const [head, setHead] = useState(null);
   const [correct, setCorrect] = useState(null);
   const [view, setView] = useState('question');
+  const [input, setInput] = useState(null);
+  const [result, setResult] = useState({});
   const questionInput = useRef(null);
 
   useEffect(() => {
@@ -20,9 +22,10 @@ export default function LearningForm(props) {
     });
   }, []);
 
-  const guessWord = e => {
+  function guessWord(e) {
     e.preventDefault();
     console.log(questionInput.current.value);
+
     learningApiService.makeGuess(questionInput.current.value).then(response => {
       const newHead = {
         nextWord: response.nextWord,
@@ -30,16 +33,48 @@ export default function LearningForm(props) {
         wordCorrectCount: response.wordCorrectCount,
         wordIncorrectCount: response.wordIncorrectCount
       };
-      setCorrect(true);
-      //r//esponse.processNextWord(response.nextWord);
+      debugger;
+      setResult({ question: head.nextWord, answer: response.answer });
+      setInput(questionInput.current.value);
+      setCorrect(response.isCorrect);
       setHead(newHead);
+      //r//esponse.processNextWord(response.nextWord);
+      setView('answer');
     });
     //questionInput.current;
+  }
+
+  const showResults = () => {
+    return (
+      <React.Fragment>
+        <div className="DisplayScore">
+          <p>Your total score is: {head.totalScore}</p>
+        </div>
+        <h2>
+          {!correct
+            ? `Good try, but not quite right :(`
+            : `You were correct! :D`}
+        </h2>
+        <div className="DisplayFeedback">
+          <p>
+            The correct translation for {result.question} was {result.answer}{' '}
+            and you chose {input}!
+          </p>
+        </div>
+        <Button className="result-btn" onClick={showQuestion} type="submit">
+          Try another word!
+        </Button>
+      </React.Fragment>
+    );
+  };
+
+  const showQuestion = () => {
+    setView('question');
   };
 
   return (
     <React.Fragment>
-      {head !== null && (
+      {head !== null && view === 'question' && (
         <React.Fragment>
           <header>
             <h2>Translate the word:</h2>
@@ -71,6 +106,7 @@ export default function LearningForm(props) {
           </p>
         </React.Fragment>
       )}
+      {view === 'answer' && head !== null && showResults()}
       {head === null && 'Loading'}
     </React.Fragment>
   );

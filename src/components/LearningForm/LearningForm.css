@@ -34,3 +34,11 @@
 .learning-section .Input {
   margin: 20px 50px;
 }
+
+.result-btn {
+  max-width: 238px;
+  margin: 0 auto;
+  background-color: #309dce;
+
+  color: #bffaff;
+}
