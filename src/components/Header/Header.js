@@ -38,7 +38,7 @@ class Header extends Component {
           {TokenService.hasAuthToken()
             ? this.renderLogoutLink()
             : this.renderLoginLink()}
-          <h1 className="nav-header">
+          <h1 data-shadow='Spaced repetition' className="nav-header">
             <Link to="/">Spaced repetition</Link>
           </h1>
         </div>

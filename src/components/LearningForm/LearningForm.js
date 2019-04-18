@@ -16,7 +16,6 @@ export default function LearningForm(props) {
 
   useEffect(() => {
     learningApiService.getLanguageHead().then(word => {
-      console.log(word);
       setHead(word);
       languageContext.processNextWord(word);
     });
@@ -24,7 +23,6 @@ export default function LearningForm(props) {
 
   function guessWord(e) {
     e.preventDefault();
-    console.log(questionInput.current.value);
 
     learningApiService.makeGuess(questionInput.current.value).then(response => {
       const newHead = {

@@ -7,4 +7,10 @@ form {
   background-color: #309dcf;
   color: #efefef;
   border-radius: 8px;
+
+  box-shadow: 5px 5px rgba(26, 114, 151, 0.6),
+              10px 10px rgba(34, 114, 151, 0.4),
+              15px 15px rgba(35, 114, 151, 0.3),
+              20px 20px rgba(48, 157, 151, .2),
+              25px 25px rgba(48, 157, 151, .1);
 }
