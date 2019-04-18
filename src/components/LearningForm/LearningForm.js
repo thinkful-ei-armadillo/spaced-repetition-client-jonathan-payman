@@ -3,6 +3,8 @@ import { Input, Required, Label } from '../Form/Form';
 import Button from '../Button/Button';
 import learningApiService from '../../services/learning-api-service';
 import LanguageContext from '../../contexts/LanguageContext';
+import Correct from '../Results/Correct';
+import Incorrect from '../Results/Incorrect';
 import './LearningForm.css';
 
 export default function LearningForm(props) {
@@ -48,8 +50,8 @@ export default function LearningForm(props) {
         </div>
         <h2>
           {!correct
-            ? `Good try, but not quite right :(`
-            : `You were correct! :D`}
+            ? <Incorrect />
+            : <Correct />}
         </h2>
         <div className="DisplayFeedback">
           <p>
