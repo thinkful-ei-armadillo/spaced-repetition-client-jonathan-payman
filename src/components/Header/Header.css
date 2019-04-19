@@ -43,14 +43,16 @@ nav {
 }
 
 @media screen and (max-width: 700px) {
-  .nav-header {
-  }
-
-  .navbar a {
+  .header-user {
+    padding: 0px;
+    font-size: 14px;
+    border-right: none;
+    padding-right: 0px;
+    margin-right: 5px;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   nav span,
   nav a {
     font-size: 13px;
@@ -58,6 +60,7 @@ nav {
     position: relative;
   }
   .header-user {
+    display: none;
     padding: 0px;
     border-right: none;
     padding-right: 0px;
