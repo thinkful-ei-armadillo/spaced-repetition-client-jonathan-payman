@@ -48,6 +48,7 @@ export default function LearningForm() {
         <div className="DisplayScore">
           <p>Your total score is: {head.totalScore}</p>
         </div>
+        <section className="DisplaySection">
         <h2>
           {!correct
             ? <Incorrect />
@@ -57,11 +58,12 @@ export default function LearningForm() {
           <p>
             The correct translation for {result.question} was {result.answer}{' '}
             and you chose {input}!
-          </p>
-        </div>
+          </p> 
+          </div>
         <Button className="result-btn" onClick={showQuestion} type="submit">
           Try another word!
         </Button>
+        </section>
       </React.Fragment>
     );
   };
