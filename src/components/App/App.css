@@ -18,6 +18,7 @@ p {
   font-weight: bold;
 }
 .form-item input {
+  font-size: 16px;
   display: block;
   width: 100%;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.06), 0 5px 4px 0 rgba(0, 0, 0, 0.1);
@@ -25,6 +26,10 @@ p {
   min-width: 238px;
   height: 40px;
   padding-left: 10px;
+}
+
+div[role='alert'] p {
+  color: honeydew;
 }
 
 section {
