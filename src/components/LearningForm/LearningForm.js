@@ -7,7 +7,7 @@ import Correct from '../Results/Correct';
 import Incorrect from '../Results/Incorrect';
 import './LearningForm.css';
 
-export default function LearningForm(props) {
+export default function LearningForm() {
   const languageContext = useContext(LanguageContext);
   const [head, setHead] = useState(null);
   const [correct, setCorrect] = useState(null);
