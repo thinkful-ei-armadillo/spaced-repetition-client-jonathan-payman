@@ -1,5 +1,5 @@
 .word-form-info {
-  color: #6c6c6c;
+  color: #efefef;
   text-align: center;
   line-height: 26px;
 }
@@ -20,9 +20,23 @@
   margin: 0;
 }
 
+.learning-section h2 {
+  -webkit-animation: fade-in-fwd 0.6s both;
+	        animation: fade-in-fwd 0.6s both;
+}
+
+.learning-section span {
+    -webkit-animation: fade-in-fwd 0.6s both;
+	        animation: fade-in-fwd 0.6s both;
+}
+
 .learning-section header {
   margin-bottom: 15px;
   margin-top: 15px;
+}
+
+.learning-section form {
+  margin-bottom: 30px;
 }
 
 .learning-section form p {
@@ -35,12 +49,59 @@
   margin: 20px 50px;
 }
 
+.learning-section {
+  margin-top: 40px;
+}
+
+.DisplaySection {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  padding-bottom: 40px;
+  background-color: #309dcf;
+  border-radius: 8px;
+  box-shadow: 5px 5px rgba(34, 114, 151, 0.5),
+              10px 10px rgba(34, 114, 151, 0.4),
+              15px 15px rgba(35, 114, 151, 0.3),
+              20px 20px rgba(48, 157, 151, .2),
+              25px 25px rgba(48, 157, 151, .1);
+}
+
+.DisplaySection h2, .DisplaySection p {
+  color: #efefef;
+}
+
 .result-btn {
   max-width: 238px;
   margin: 0 auto;
-  background-color: #309dce;
+  background-color: #99d3df;
+  color: #efefef;
+}
 
-  color: #bffaff;
+@-webkit-keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 700px) {

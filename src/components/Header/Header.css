@@ -32,6 +32,7 @@ nav {
   float: left;
   font-size: 25px;
   margin: 0;
+  text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
 }
 
 .navbar {

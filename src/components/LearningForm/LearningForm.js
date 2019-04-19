@@ -3,9 +3,11 @@ import { Input, Required, Label } from '../Form/Form';
 import Button from '../Button/Button';
 import learningApiService from '../../services/learning-api-service';
 import LanguageContext from '../../contexts/LanguageContext';
+import Correct from '../Results/Correct';
+import Incorrect from '../Results/Incorrect';
 import './LearningForm.css';
 
-export default function LearningForm(props) {
+export default function LearningForm() {
   const languageContext = useContext(LanguageContext);
   const [head, setHead] = useState(null);
   const [correct, setCorrect] = useState(null);
@@ -16,7 +18,6 @@ export default function LearningForm(props) {
 
   useEffect(() => {
     learningApiService.getLanguageHead().then(word => {
-      console.log(word);
       setHead(word);
       languageContext.processNextWord(word);
     });
@@ -24,7 +25,6 @@ export default function LearningForm(props) {
 
   function guessWord(e) {
     e.preventDefault();
-    console.log(questionInput.current.value);
 
     learningApiService.makeGuess(questionInput.current.value).then(response => {
       const newHead = {
@@ -48,20 +48,22 @@ export default function LearningForm(props) {
         <div className="DisplayScore">
           <p>Your total score is: {head.totalScore}</p>
         </div>
+        <section className="DisplaySection">
         <h2>
           {!correct
-            ? `Good try, but not quite right :(`
-            : `You were correct! :D`}
+            ? <Incorrect />
+            : <Correct />}
         </h2>
         <div className="DisplayFeedback">
           <p>
             The correct translation for {result.question} was {result.answer}{' '}
             and you chose {input}!
-          </p>
-        </div>
+          </p> 
+          </div>
         <Button className="result-btn" onClick={showQuestion} type="submit">
           Try another word!
         </Button>
+        </section>
       </React.Fragment>
     );
   };

@@ -13,6 +13,38 @@ button {
 }
 
 button:hover {
-  /*background-color: rgba(255, 255, 255, 0.75);*/
   cursor: pointer;
 }
+
+.Button:hover {
+	-webkit-animation: Button 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.740) both;
+	        animation: Button 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.740) both;
+}
+
+
+@-webkit-keyframes Button {
+  0% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(50px) translateY(-6px);
+            transform: translateZ(50px) translateY(-6px);
+    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35);
+  }
+}
+@keyframes Button {
+  0% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(50px) translateY(-6px);
+            transform: translateZ(50px) translateY(-6px);
+    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35);
+  }
+}
+
+

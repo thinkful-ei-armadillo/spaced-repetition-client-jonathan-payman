@@ -12,6 +12,11 @@ ul {
   margin-bottom: 15px;
   padding-top: 15px;
   color: #e7e7e7;
+  box-shadow: 5px 5px rgba(34, 114, 151, 0.5),
+              10px 10px rgba(34, 114, 151, 0.4),
+              15px 15px rgba(34, 114, 151, 0.3),
+              20px 20px rgba(48, 157, 151, .2),
+              25px 25px rgba(48, 157, 151, .1);
 }
 
 .list-container h3 {
@@ -71,7 +76,8 @@ ul {
 .dashboard-btn {
   text-decoration: none;
   width: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 700px) {
