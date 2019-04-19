@@ -12,11 +12,9 @@ ul {
   margin-bottom: 15px;
   padding-top: 15px;
   color: #e7e7e7;
-  box-shadow: 5px 5px rgba(34, 114, 151, 0.5),
-              10px 10px rgba(34, 114, 151, 0.4),
-              15px 15px rgba(34, 114, 151, 0.3),
-              20px 20px rgba(48, 157, 151, .2),
-              25px 25px rgba(48, 157, 151, .1);
+  box-shadow: 5px 5px rgba(34, 114, 151, 0.5), 10px 10px rgba(34, 114, 151, 0.4),
+    15px 15px rgba(34, 114, 151, 0.3), 20px 20px rgba(48, 157, 151, 0.2),
+    25px 25px rgba(48, 157, 151, 0.1);
 }
 
 .list-container h3 {
@@ -82,10 +80,18 @@ ul {
 
 @media screen and (max-width: 700px) {
   .dashboard-section {
-    margin-top: 60px;
   }
 
-  .word-list-item div{
+  .word-list-item div {
     padding: 0 5px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .word-list-item span {
+    font-size: 10px;
+  }
+  .word-list li {
+    padding: 0px;
   }
 }

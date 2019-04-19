@@ -32,7 +32,7 @@ nav {
   float: left;
   font-size: 25px;
   margin: 0;
-  text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
+  text-shadow: 0.03em 0.03em 0 hsla(230, 40%, 50%, 1);
 }
 
 .navbar {
@@ -43,16 +43,28 @@ nav {
 }
 
 @media screen and (max-width: 700px) {
-
   .nav-header {
-    text-align: center;
-    float: none;
-    display: block;
-    margin-top: 30px;
   }
 
   .navbar a {
-    color: #6c6c6c;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  nav span,
+  nav a {
+    font-size: 13px;
+    top: 3px;
+    position: relative;
+  }
+  .header-user {
+    padding: 0px;
+    border-right: none;
+    padding-right: 0px;
+    margin-right: 5px;
   }
 
+  .nav-header a {
+    font-size: 18px;
+  }
 }

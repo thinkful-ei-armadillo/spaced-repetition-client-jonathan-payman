@@ -1,5 +1,5 @@
 .word-form-info {
-  color: #efefef;
+  color: #676767;
   text-align: center;
   line-height: 26px;
 }
@@ -22,12 +22,12 @@
 
 .learning-section h2 {
   -webkit-animation: fade-in-fwd 0.6s both;
-	        animation: fade-in-fwd 0.6s both;
+  animation: fade-in-fwd 0.6s both;
 }
 
 .learning-section span {
-    -webkit-animation: fade-in-fwd 0.6s both;
-	        animation: fade-in-fwd 0.6s both;
+  -webkit-animation: fade-in-fwd 0.6s both;
+  animation: fade-in-fwd 0.6s both;
 }
 
 .learning-section header {
@@ -46,7 +46,6 @@
 }
 
 .learning-section .Input {
-  margin: 20px 50px;
 }
 
 .learning-section {
@@ -60,14 +59,13 @@
   padding-bottom: 40px;
   background-color: #309dcf;
   border-radius: 8px;
-  box-shadow: 5px 5px rgba(34, 114, 151, 0.5),
-              10px 10px rgba(34, 114, 151, 0.4),
-              15px 15px rgba(35, 114, 151, 0.3),
-              20px 20px rgba(48, 157, 151, .2),
-              25px 25px rgba(48, 157, 151, .1);
+  box-shadow: 5px 5px rgba(34, 114, 151, 0.5), 10px 10px rgba(34, 114, 151, 0.4),
+    15px 15px rgba(35, 114, 151, 0.3), 20px 20px rgba(48, 157, 151, 0.2),
+    25px 25px rgba(48, 157, 151, 0.1);
 }
 
-.DisplaySection h2, .DisplaySection p {
+.DisplaySection h2,
+.DisplaySection p {
   color: #efefef;
 }
 
@@ -81,12 +79,12 @@
 @-webkit-keyframes fade-in-fwd {
   0% {
     -webkit-transform: translateZ(-80px);
-            transform: translateZ(-80px);
+    transform: translateZ(-80px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+    transform: translateZ(0);
     opacity: 1;
   }
 }
@@ -94,20 +92,18 @@
 @keyframes fade-in-fwd {
   0% {
     -webkit-transform: translateZ(-80px);
-            transform: translateZ(-80px);
+    transform: translateZ(-80px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+    transform: translateZ(0);
     opacity: 1;
   }
 }
 
 @media screen and (max-width: 700px) {
-
   .learning-section {
-    margin-top: 80px;
   }
 
   .learning-section form {
@@ -115,8 +111,6 @@
   }
 
   .learning-section .Input {
-    width: 60vw;
-    margin-left: 20px;
   }
 
   .learning-section h2 {
@@ -128,7 +122,8 @@
   }
 
   .word-form-info {
+    font-size: 12px;
+    line-height: inherit;
     margin: 10px 15px;
   }
-
 }

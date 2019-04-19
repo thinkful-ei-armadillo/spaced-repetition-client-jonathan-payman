@@ -28,13 +28,23 @@ section {
 }
 
 @media screen and (max-width: 700px) {
-
   .registration-section {
-    margin-top: 70px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .registration-section p {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .register-header {
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-size: 18px;
   }
 
   .registration-section form {
     margin-bottom: 20px;
   }
-
 }
